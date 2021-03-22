@@ -11,7 +11,7 @@ Do not forget to read the [readme](../README.md)
 
 Hint: Your application might not run. It probably contains some bugs. You are here to solve them. ;-)
 
-As you can see, you have quite some errors. The issues are the fact we're missing 2 mains functions: 
+As you can see, you have quite some errors. we're missing one function to make it work: 
 - `interval`
 
 ## Challenge 2: Build your own version of the `interval` Observable
