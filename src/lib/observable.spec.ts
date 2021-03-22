@@ -27,7 +27,7 @@ describe("Observable", () => {
       expect(typeof observable.subscribe).toEqual("function");
     });
 
-    it("should take one argument of type IObserver", () => {
+    it("should take one argument", () => {
       expect(observable.subscribe.length).toEqual(1);
     });
     it("should be called with an observer", () => {
