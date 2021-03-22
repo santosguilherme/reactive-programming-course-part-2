@@ -13,6 +13,7 @@ import {
   timerDisplay,
   millisecondsToStr,
 } from "./utils";
+import "hackjam-banner";
 
 let subscription: ISubscription = null;
 
