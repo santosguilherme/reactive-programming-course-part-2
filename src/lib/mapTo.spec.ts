@@ -2,6 +2,7 @@ import { IObserver, ISubscription } from "../types";
 import { fromEvent } from "./fromEvent";
 import { mapTo } from "./mapTo";
 import { Observable } from "./observable";
+
 describe("mapTo operator", () => {
   it("should be a function", () => {
     expect(mapTo).toBeTruthy();
@@ -51,6 +52,7 @@ describe("mapTo operator", () => {
     document.head.click();
     expect(actual).toEqual([true, true, true]);
   });
+
   it("should unsubscribe from the source after unsubscribe has been called then complete", (done) => {
     // Given
     const intervalSubscription: ISubscription = { unsubscribe() {} };
