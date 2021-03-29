@@ -1,6 +1,25 @@
+import { IObserver, IProducer } from "../types";
+import { Observable } from "./observable";
+
 export function fromEvent(
-  el: HTMLElement,
-  eventName: "click" | "change" | "error" | "input"
+    nodeEl: HTMLElement,
+    eventName: "error" | "click" | "change" | "input"
 ) {
-  throw new Error("Should be implemented");
+  const producer: IProducer = (observer: IObserver) => {
+    const eventHandler = (event: MouseEvent) => observer.next(event);
+
+    if (typeof nodeEl.addEventListener === 'function') {
+      nodeEl.addEventListener(eventName, eventHandler);
+    } else {
+      observer.error('You should provide a valid html element');
+    }
+
+    observer.complete();
+
+    return {
+      unsubscribe: () => nodeEl.removeEventListener(eventName, eventHandler)
+    };
+  };
+
+  return new Observable(producer);
 }
