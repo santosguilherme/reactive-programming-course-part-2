@@ -3,7 +3,7 @@
 Do not forget to read the [readme](../README.md) 
 
 
-## Challenge: Build your own version of the `Observable` function
+## Challenge: Build your own version of the `Merge` function
 
 This part of the challenge will deal with more operators. 
 
@@ -21,6 +21,6 @@ At the end of this exercise, the following points should be met:
 
 - Launch the app `yarn start` or `npm start` and go to http://localhost:8000/
 - Run the tests ! `yarn test` or `npm test`
-- Alternatively, run the tests in watch mode `yarn start --watch` or `npm start  -- --watch` then press `a` to run all tests.
+- Alternatively, run the tests in watch mode `yarn test --watch` or `npm test  -- --watch` then press `a` to run all tests.
 - Once your work is done **commit** and **push** `git add src && git commit -m "What did you do?" && git push origin`
 

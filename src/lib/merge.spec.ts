@@ -1,4 +1,4 @@
-import { merge } from "../lib/merge";
+import { merge } from "./merge";
 import { IObserver, ISubscription } from "../types";
 import { interval } from "./interval";
 import { Observable } from "./observable";
