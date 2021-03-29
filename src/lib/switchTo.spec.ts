@@ -3,6 +3,7 @@ import { fromEvent } from "./fromEvent";
 import { interval } from "./interval";
 import { Observable } from "./observable";
 import { switchTo } from "./switchTo";
+
 describe("SwitchTo operator", () => {
   it("should be a function", () => {
     expect(typeof switchTo).toEqual("function");

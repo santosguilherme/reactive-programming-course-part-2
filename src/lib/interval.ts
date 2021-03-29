@@ -9,14 +9,13 @@ export function interval(period: number) {
       observer.next(counter++);
     }, period);
 
-
-    if (typeof observer.complete === 'function') {
-      observer.complete();
-    }
-
     return {
       unsubscribe: () => {
         clearInterval(id);
+
+        if (typeof observer.complete === 'function') {
+          observer.complete();
+        }
       }
     };
   };
