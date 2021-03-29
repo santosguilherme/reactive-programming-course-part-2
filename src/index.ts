@@ -5,6 +5,8 @@
  * Reactive Programming.
  */
 
+import { interval } from "./lib/interval";
+import { ISubscription } from "./types";
 import {
   btnStart$,
   btnCancel$,
@@ -13,14 +15,15 @@ import {
 } from "./utils";
 import "hackjam-banner";
 
-let counter = 0,
-  id: NodeJS.Timeout = null;
+let subscription: ISubscription = null;
 
 btnStart$.subscribe({
   next() {
-    id = setInterval(() => {
-      timerDisplay.textContent = millisecondsToStr(counter++);
-    }, 1000);
+    subscription = interval(1000).subscribe({
+      next(period) {
+        timerDisplay.textContent = millisecondsToStr(period);
+      },
+    });
   },
   complete() {
     console.log("completed");
@@ -29,6 +32,6 @@ btnStart$.subscribe({
 
 btnCancel$.subscribe({
   next() {
-    clearInterval(id);
+    subscription.unsubscribe();
   },
 });
